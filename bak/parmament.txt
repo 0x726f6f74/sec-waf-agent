@@ -1,0 +1,23 @@
+waf 配置参数:
+id,
+config_waf_enable = "on"	#防火墙开关
+config_white_url_check = "on"	#url访问白名单开关
+config_white_ip_check = "on"
+config_black_ip_check = "on"
+config_url_check = "on"
+config_url_args_check = "on"
+config_user_agent_check = "on"
+config_cookie_check = "on"
+config_cc_check = "on"
+config_cc_rate = "100/60"
+config_post_check = "on"
+config_waf_output = "html"		#waf攻击重定向Html或者redirect 跳转到config_waf_redirect_url ;有两个值html和redirect
+config_waf_redirect_url = "http://www.jianshu.com/users/d484ac7f2c2c/latest_articles"
+config_output_html="<html><head>test</head><body>403</body></html>"
+
+
+waf规则参数:
+id,
+rule_title="xss攻击"
+rule_type=args  有多个值（args,blackip,cookie,post,url,useragent,whiteip,whiteurl）
+rule_args={"\.\.\/","base64_encode"}  字典格式保存有多个值

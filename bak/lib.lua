@@ -30,7 +30,7 @@ end
 --Get WAF rule
 function get_rule(rulefilename)
     local io = require 'io'
-    local RULE_PATH = waf_rule_dir
+    local RULE_PATH = "/usr/local/nginx/nginx/conf/waf/rule-config"
     local RULE_FILE = io.open(RULE_PATH..'/'..rulefilename,"r")
     if RULE_FILE == nil then
         return
@@ -48,12 +48,11 @@ function log_record(method,url,data,ruletag)
             local cjson = require "cjson"  
             local producer = require "resty.kafka.producer"  
             local broker_list = {  
-                { host = "1.1.1.1", port = 9092 },  
+                { host = "10.1.200.120", port = 9092 },  
             }
             local CLIENT_IP = get_client_ip()
             local USER_AGENT = get_user_agent()
             local SERVER_NAME = ngx.var.server_name
-            -- local SERVER_NAME = ngx.var.server_addr
             local LOCAL_TIME = ngx.localtime()
             local log_json_obj = {
                          client_ip = CLIENT_IP,

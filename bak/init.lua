@@ -176,7 +176,7 @@ function post_attack_check()
         if POST_ARGS ~= nil then
             for _,rule in pairs(POST_RULES) do
                 if rule ~="" and rulematch(POST_ARGS,rule,"jo") then
-                    log_record('Deny_POST_Args',H,POST_ARGS,rule)
+                    log_record('Deny_POST_Args',H..POST_ARGS,"-",rule)
                     if config_waf_enable == "on" then
                             waf_output()
                         return true
@@ -188,16 +188,3 @@ function post_attack_check()
     end
     return false
 end 
-
---[[
-function scan_head_check()
-    if ngx.var.http_Acunetix_Aspect then
-        log_record('Deny_SCAN_Args',"-",ngx.var.http_Acunetix_Aspect,"-")
-        if config_waf_enable == "on" then
-                waf_output()
-            return true
-        end
-    end
-    return false
-end 
---]]
