@@ -19,6 +19,9 @@
 数据报告实时展现，实时动态报警    
 
 ## Usage
+
+waf系统环境配置:http://www.jianshu.com/p/e474f24c0404 
+
 ```
 pip install MySQLdb
 pip install pykafka
@@ -52,6 +55,8 @@ topic = client.topics['waf_logger']
 ```
 
 执行文件，启动数据报告，可直接从数据可以看到结果，也可以通过平台直接实时读取。
+
+
 
 
 #### Issue
