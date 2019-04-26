@@ -4,6 +4,13 @@
 
 # sec-securtiy-waf-agent
 
+waf 请关注： https://github.com/op-sec-team/releases-openstar-Enterprise
+
+
+
+
+
+
 ## Introduce 
 本程序是WAF AGENT端；采用LUA编写，攻击参数利用正则进行匹配，程序更新和报告数据采用python+api+mysql的方式进行传输；   
 
@@ -60,9 +67,3 @@ topic = client.topics['waf_logger']
 
 执行文件，启动数据报告，可直接从数据可以看到结果，也可以通过平台直接实时读取。
 
-
-
-
-#### Issue
-
-welcome to give me some sugguest
