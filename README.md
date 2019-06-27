@@ -2,7 +2,7 @@
 [![platform](https://img.shields.io/badge/platform-osx%2Flinux%2Fwindows-green.svg)](https://github.com/Canbing007/sec-portscan-agent)
 [![python](https://img.shields.io/badge/python-2.7-blue.svg)](https://www.python.org/downloads/)
 
-# sec-securtiy-waf-agent
+## waf新版本，跳转到以下链接：
 
 waf 请关注： 
 https://github.com/op-sec-team/releases-openstar-Enterprise
@@ -12,7 +12,7 @@ https://www.kancloud.cn/openstar/install/1136677
 
 
 
-## 这里是很老的版本说明和代码，已不更新和维护 。。。
+## 这里是很老的版本说明，已不更新和维护 。。。
 ```
 本程序是WAF AGENT端；采用LUA编写，攻击参数利用正则进行匹配，程序更新和报告数据采用python+api+mysql的方式进行传输；   
 
