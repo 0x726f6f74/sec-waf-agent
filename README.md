@@ -4,18 +4,16 @@
 
 # sec-securtiy-waf-agent
 
-waf 请关注： https://github.com/op-sec-team/releases-openstar-Enterprise
+waf 请关注： 
+https://github.com/op-sec-team/releases-openstar-Enterprise
 
-![openstar](https://raw.githubusercontent.com/0xbing/sec-waf-agent/master/11.png)
-![openstar](https://raw.githubusercontent.com/0xbing/sec-waf-agent/master/22.png)
-![openstar](https://raw.githubusercontent.com/0xbing/sec-waf-agent/master/33.png)
-![openstar](https://raw.githubusercontent.com/0xbing/sec-waf-agent/master/44.png)
-![openstar](https://raw.githubusercontent.com/0xbing/sec-waf-agent/master/55.png)
+使用说明文档：
+https://www.kancloud.cn/openstar/install/1136677
 
 
 
-
-## Introduce 
+## 这里是很老的版本说明和代码，已不更新和维护 。。。
+```
 本程序是WAF AGENT端；采用LUA编写，攻击参数利用正则进行匹配，程序更新和报告数据采用python+api+mysql的方式进行传输；   
 
 特点：   
@@ -36,30 +34,24 @@ waf 请关注： https://github.com/op-sec-team/releases-openstar-Enterprise
 ## Usage
 
 waf系统环境配置:http://www.jianshu.com/p/e474f24c0404 
-
-```
 pip install MySQLdb
 pip install pykafka
-```
+
 在nginx.conf的http段添加     
-```
 lua_package_path "/usr/local/nginx/conf/waf/?.lua";
 lua_shared_dict limit 10m;
 init_by_lua_file  /usr/local/nginx/conf/waf/init.lua; 
 access_by_lua_file /usr/local/nginx/conf/waf/waf.lua;
-```  
+
 
 update.py为节点更新文件;配置update.py文件，如下几个参数；    
-
-```
 waf_node_api      			#配置参数API，包括配置和规则
 waf_node_result_api			#更新接口API
 waf_node_key				#节点认证KEY
-```
+
 配置完成执行。    
 
 pykaf.py为报告数据文件；配置如下几个参数：    
-```
 #配置ip
 client = KafkaClient(hosts="ip:9092")   
 #配置ip，用户密码
@@ -67,7 +59,6 @@ conn= MySQLdb.connect(host='ip',port = 3306,user='user',passwd='mypwd',db ='db')
 cur = conn.cursor()
 #配置kafka的topic于lib.lua中的" local ok, err = bp:send("waf_logger", nil, LOG_LINE) " 的waf_logger一致
 topic = client.topics['waf_logger']
-```
 
 执行文件，启动数据报告，可直接从数据可以看到结果，也可以通过平台直接实时读取。
-
+```
