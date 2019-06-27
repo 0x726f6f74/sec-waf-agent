@@ -12,7 +12,7 @@ https://www.kancloud.cn/openstar/install/1136677
 
 
 
-## 这里是很老的版本说明，已不更新和维护 。。。
+## 以下为很老的版本说明，已不更新和维护 。。。
 ```
 本程序是WAF AGENT端；采用LUA编写，攻击参数利用正则进行匹配，程序更新和报告数据采用python+api+mysql的方式进行传输；   
 
